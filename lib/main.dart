@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:huma/navigation.dart';
+<<<<<<< HEAD
 
 import 'initialpages/Login_Page.dart';
 
+=======
+
+>>>>>>> 4f05df7db6d8c08a97acfaa88f25eabda5e95058
 
 void main() {
   runApp(const MyApp());

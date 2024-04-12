@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:huma/books.dart';
+import 'package:huma/devices.dart';
 import 'package:huma/global2.dart';
+import 'package:huma/sell.dart';
+import 'package:huma/transportation.dart';
 
 class Page1_screen extends StatefulWidget {
   const Page1_screen({super.key});
@@ -46,10 +50,17 @@ class _Page1_screenState extends State<Page1_screen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-               
-               Global2(img: "assets/images/Boks1.png", text1: "Books", text2: "Buy or sell books "),
+               GestureDetector(
+              child:  Global2(img: "assets/images/Boks1.png", text1: "Books", text2: "Buy or sell books "),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Books()),);
+              },),
                 SizedBox(width: 20,),
-             Global2(img: "assets/images/Exchange.jpg", text1: "sell", text2: "Buy or Rent\n prodcuts"),
+                InkWell(
+             child:  Global2(img: "assets/images/Exchange.jpg", text1: "sell", text2: "Buy or Rent\n prodcuts"),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>sell()));
+              },),
                
               ],
             ),
@@ -58,9 +69,17 @@ class _Page1_screenState extends State<Page1_screen> {
                mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Global2(img: "assets/images/cycle.png", text1: "Transportation", text2: "Make memorable\n      moment"),
+                InkWell(
+                child:Global2(img: "assets/images/cycle.png", text1: "Transportation", text2: "Make memorable\n      moment"),
+                 onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Transportation()));
+              },),
                  SizedBox(width: 20,),
-                 Global2(img: "assets/images/fan.png", text1: "Electronic\n Devices", text2:"   Rent or sell\nelectronic products")
+                 InkWell(
+                child:  Global2(img: "assets/images/fan.png", text1: "Electronic\n Devices", text2:"   Rent or sell\nelectronic products"),
+                 onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Devices()));
+              },)
                   
               ],
             )

@@ -13,9 +13,7 @@ class Global2 extends StatefulWidget {
 class _Global2State extends State<Global2> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){},
-      child: Container(
+    return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20)),
           color: Colors.white,
@@ -54,7 +52,7 @@ class _Global2State extends State<Global2> {
           ],
          ),
         ),
-      ),
+      
     );
   }
 }
