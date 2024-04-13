@@ -23,7 +23,7 @@ class _GlobalState extends State<Global> {
     return Container(
     
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.grey.withOpacity(0.1),
           borderRadius: BorderRadius.all(Radius.circular(15))
 
       ),
@@ -38,7 +38,8 @@ class _GlobalState extends State<Global> {
           Row(
             children: [
               SizedBox(width: 11,),
-              Text(widget.product,style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w600),),
+   
+              Text(widget.product,style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w600,),),
             ],
           ),
           SizedBox(height: 10,),
@@ -51,7 +52,7 @@ class _GlobalState extends State<Global> {
                  
             child: Image(image:AssetImage(widget.img) ,height: 280,width: 280,)),
              SizedBox(height: 10,),
-            Text(widget.subname,style: TextStyle(color: Colors.black,fontSize: 16),),
+            Text(widget.subname,style: TextStyle(color: Colors.black,fontSize: 16,fontFamily: 'inspire',fontWeight: FontWeight.w600),),
             SizedBox(height: 20,),
             Row(
               children: [
@@ -60,7 +61,7 @@ class _GlobalState extends State<Global> {
                  ElevatedButton(onPressed: (){}, child: Column(
                     children: [  Text(widget.text1,style: TextStyle(color: Colors.black),),
                    
-                        Text(widget.text2,style: TextStyle(color: Colors.black)),
+                        Text(widget.text2,style: TextStyle(color: Colors.black,)),
                       
                     
                     ],

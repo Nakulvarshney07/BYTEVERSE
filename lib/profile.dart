@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:huma/About.dart';
+import 'package:huma/help.dart';
 
 class Profile_screen extends StatefulWidget {
   const Profile_screen({super.key});
@@ -64,7 +66,9 @@ class _Profile_screenState extends State<Profile_screen> {
                     Container(
                        color: Colors.grey.shade900,
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+
+                        },
                         child: ListTile(
                           leading: Icon(Icons.location_pin,color: Colors.white,),
                          
@@ -92,7 +96,9 @@ class _Profile_screenState extends State<Profile_screen> {
                     Container(
                         color: Colors.grey.shade900,
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Help()));
+                        },
                         child: ListTile(
                           
                           leading: FaIcon(FontAwesomeIcons.question,color: Colors.white,),
@@ -105,7 +111,9 @@ class _Profile_screenState extends State<Profile_screen> {
                     Container(
                        color: Colors.grey.shade900,
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+                           Navigator.push(context, MaterialPageRoute(builder: (context)=>About()));
+                        },
                         child: ListTile(
                           
                           leading: Icon(Icons.summarize_rounded,color: Colors.white,),
