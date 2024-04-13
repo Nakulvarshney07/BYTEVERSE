@@ -17,7 +17,7 @@ class _BooksState extends State<Books> {
         backgroundColor: Colors.black,
         title:
            
-            Icon(Icons.abc,color: Colors.white,size: 40,),
+          Image(image: AssetImage("assets/images/Rental1.png"),height: 40,width: 40,)
 
           
         

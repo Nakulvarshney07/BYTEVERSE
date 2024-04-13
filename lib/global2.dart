@@ -40,7 +40,7 @@ class _Global2State extends State<Global2> {
             Text(widget.text1,style: TextStyle(fontSize: 19,fontWeight: FontWeight.w600,),),
             SizedBox(height: 2,),
            
-                Text(widget.text2,style: TextStyle(fontSize: 15,fontWeight:FontWeight.w400),),
+                Text(widget.text2,style: TextStyle(fontSize: 15,fontWeight:FontWeight.w400,fontFamily: 'inspire',),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [

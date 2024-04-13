@@ -15,9 +15,9 @@ class _DevicesState extends State<Devices> {
         centerTitle: true,
       
         backgroundColor: Colors.black,
-        title:
+        title:Image(image: AssetImage("assets/images/Rental1.png"),height: 40,width: 40,)
            
-            Icon(Icons.abc,color: Colors.white,size: 40,),
+           
 
           
         

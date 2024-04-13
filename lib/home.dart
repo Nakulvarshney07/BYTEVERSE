@@ -121,9 +121,7 @@ class _Home_screenState extends State<Home_screen> {
                         Divider(thickness: 2,color: Colors.grey,),
                         Global(product: "Table Fan", subname: "Polycab Aery 400 mm 3 Blade Table Fan ", text1: "Rent\u{20B9}${100}", text2: "per month", text3:"Buy Now", text4: "\u{20B9}${2200}", img: "assets/images/fan.png"),
                          Divider(thickness: 2,color: Colors.grey,),
-                        Global1(product: "Catering", subname: "Gupta caters", img: "assets/images/aters.jpg", text1: "Get best Cuisine for your", text2:"occassion to be special  " ,text3: "at just \u{20B9}${200000}",),
-                         Divider(thickness: 2,color: Colors.grey,),
-                         Global1(product: "Photography", subname: "Royal Photographers", img: "assets/images/Camera.png", text1: "Make your function ", text2:"memorable by capturing them in best quailty at just ", text3:"\u{20B9}${40000}"),
+                      
                          
                       ],),
 

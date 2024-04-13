@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:huma/books.dart';
 import 'package:huma/devices.dart';
 import 'package:huma/global2.dart';
@@ -22,12 +23,8 @@ class _Page1_screenState extends State<Page1_screen> {
         centerTitle: true,
       
         backgroundColor: Colors.black,
-        title:
+        title:Image(image: AssetImage("assets/images/Rental1.png"),height: 40,width: 40,)
            
-            Icon(Icons.abc,color: Colors.white,size: 40,),
-
-          
-        
       ),
       body: Container(
        color: Colors.black,
@@ -53,8 +50,8 @@ class _Page1_screenState extends State<Page1_screen> {
                GestureDetector(
               child:  Global2(img: "assets/images/Boks1.png", text1: "Books", text2: "Buy or sell books "),
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Books()),);
-              },),
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Books()), );
+              },), 
                 SizedBox(width: 20,),
                 InkWell(
              child:  Global2(img: "assets/images/Exchange.jpg", text1: "sell", text2: "Buy or Rent\n prodcuts"),
@@ -76,9 +73,9 @@ class _Page1_screenState extends State<Page1_screen> {
               },),
                  SizedBox(width: 20,),
                  InkWell(
-                child:  Global2(img: "assets/images/fan.png", text1: "Electronic\n Devices", text2:"   Rent or sell\nelectronic products"),
+                child:  Global2(img: "assets/images/fan.png", text1: "Electronic\n Devices", text2:" Buy or sell\n electronic \n products"),
                  onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Devices()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Devices(),));
               },)
                   
               ],
