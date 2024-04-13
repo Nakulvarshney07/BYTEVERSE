@@ -1,7 +1,12 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:huma/initialpages/ForgetPassword.dart';
 import 'package:huma/initialpages/Signup_page.dart';
+import 'package:huma/initialpages/home.dart';
+
+import '../navigation.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -12,6 +17,29 @@ class _LoginPageState extends State<LoginPage> {
   final formkey=GlobalKey<FormState>();
   final emailcontroller=TextEditingController();
   final passcontroller=TextEditingController();
+  final auth=FirebaseAuth.instance;
+  @override
+  void dispose() {
+    emailcontroller.dispose();
+    passcontroller.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+  Future<void> handler() async {
+    try {
+       await auth.signInWithEmailAndPassword(
+          email: emailcontroller.text.toString(),
+          password: passcontroller.text.toString());
+
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => app()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+      } else if (e.code == 'email-already-in-use') {
+      }
+    } catch (error) {
+      // Handle other errors
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
           Center(
             child: Container(
               width: 250, // Width of child container
-              height: 370, // Height of child container
+              height: 380, // Height of child container
 
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.1),
@@ -53,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                 filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
                 child: Container(
                   width: 250, // Width of child container
-                  height: 370, // Height of child container
+                  height: 380, // Height of child container
 
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -190,11 +218,17 @@ class _LoginPageState extends State<LoginPage> {
                                           ),
                                             onPressed: (){
                                               if (formkey.currentState!.validate())  {
-
+                                               handler();
                                               }
                                             },
                                             child: Text('Login' , style: TextStyle(color: Colors.black,fontSize: 21,fontWeight: FontWeight.w400),)),
-                                        SizedBox(height:15 ),
+                                        SizedBox(height:5 ),
+                                        TextButton(onPressed: (){
+                                         Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPassword()));
+                                        }, child: Text('Forget your password?',
+                                        style: TextStyle(color: Colors.green.withOpacity(0.8)),
+                                        )),
+                                        SizedBox(height:5 ),
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.center,
                                           children: [

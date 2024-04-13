@@ -1,7 +1,10 @@
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:huma/initialpages/Login_Page.dart';
+import 'package:huma/navigation.dart';
 
 class SignUp extends StatefulWidget{
   @override
@@ -13,6 +16,41 @@ class _SignUpPageState extends State<SignUp> {
   final emailcontroller=TextEditingController();
   final passcontroller=TextEditingController();
   final namecontroller=TextEditingController();
+  final _auth=FirebaseAuth.instance;
+
+  @override
+  void dispose() {
+    namecontroller.dispose();
+    emailcontroller.dispose();
+    passcontroller.dispose();
+    super.dispose();
+  }
+  Future<void> handler() async {
+    try {
+      final userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+          email: emailcontroller.text,
+          password: passcontroller.text);
+
+      final user = userCredential.user!;
+      final userData = {
+        'fullName': namecontroller.text,
+        'email': user.email,
+      };
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .set(userData);
+
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => app()));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+      } else if (e.code == 'email-already-in-use') {
+      }
+    } catch (error) {
+      // Handle other errors
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -187,6 +225,7 @@ class _SignUpPageState extends State<SignUp> {
                                           width: 200,
                                           height: 80,
                                           child: TextFormField(
+                                            obscureText: true,
                                             controller: passcontroller,
                                             decoration: InputDecoration(
                                                 hintText: 'Enter your Passowrd',
@@ -238,7 +277,7 @@ class _SignUpPageState extends State<SignUp> {
                                             ),
                                             onPressed: (){
                                               if (formkey.currentState!.validate())  {
-
+                                               handler();
                                               }
                                             },
                                             child: Text('SignUp' , style: TextStyle(color: Colors.black,fontSize: 21,fontWeight: FontWeight.w400),)),

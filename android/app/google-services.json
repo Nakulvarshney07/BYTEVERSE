@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "893825066478",
+    "project_id": "byteverse-4f2b5",
+    "storage_bucket": "byteverse-4f2b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893825066478:android:294b9668522bb43a4d9aff",
+        "android_client_info": {
+          "package_name": "com.example.huma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANBuLve2Wnpqum8JNgWhYsc0je3FKqZ7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
