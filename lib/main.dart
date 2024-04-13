@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:huma/initialpages/Login_Page.dart';
 import 'package:huma/navigation.dart';
  
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
      title: "Byteverse",
      initialRoute: '/',
      routes: {
-      '/':(context) => app(),
+      '/':(context) => LoginPage(),
      },
     );
   }
