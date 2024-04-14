@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:huma/About.dart';
 import 'package:huma/help.dart';
 import 'package:huma/initialpages/Login_Page.dart';
@@ -14,6 +17,19 @@ class Profile_screen extends StatefulWidget {
 }
 
 class _Profile_screenState extends State<Profile_screen> {
+  getCurrentLocation()async{
+    LocationPermission permission=await Geolocator.checkPermission();
+    if(permission==LocationPermission.denied || permission==LocationPermission.deniedForever){
+    Text("Location denied");
+     LocationPermission ask =await Geolocator.requestPermission();
+    }
+    else{
+      Position currentposition= await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
+      Text("Latitude=${currentposition.latitude.toString()}");
+      Text("Longitude=${currentposition.longitude.toString()}");
+
+    }
+  }
 
   var _fullname="";
   Future<void> _fetchUserData() async {
@@ -59,6 +75,7 @@ class _Profile_screenState extends State<Profile_screen> {
       );
     });
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,6 +132,7 @@ class _Profile_screenState extends State<Profile_screen> {
                        color: Colors.grey.shade900,
                       child: InkWell(
                         onTap: (){
+                          getCurrentLocation();
 
                         },
                         child: ListTile(

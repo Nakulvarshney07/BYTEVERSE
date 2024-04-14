@@ -40,9 +40,9 @@ class _BooksState extends State<Books> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       
-                      Global(product: "Financial Book", subname: "Rich dad poor dad By Robert T.kiyosaki", text1: "Rent\u{20B9}${20}", text2: "per week", text3: "Buy now", text4:"\u{20B9}${300}", img: "assets/images/Rich.jpeg"),
+                      Global(product: "Financial Book", subname: "Rich dad poor dad By Robert T.kiyosaki", text1: "Rent\u{20B9}${20}", text2: "per week", text3: "Buy now", text4:"\u{20B9}${300}", img: "assets/images/Rob.png"),
                       Divider(thickness: 1,color: Colors.grey,),
-                       Global(product: "Entertaining book",subname: "Harry Potter and the cursed child ",text1: "Rent\u{20B9}${30}",text2: "per week",text3: "Buy Now",text4: "\u{20B9}${500}",img: "assets/images/Harry.jpg",),
+                       Global(product: "Entertaining book",subname: "Harry Potter and the cursed child ",text1: "Rent\u{20B9}${30}",text2: "per week",text3: "Buy Now",text4: "\u{20B9}${500}",img: "assets/images/puttar.png",),
                        Divider(thickness: 1,color: Colors.grey,),
                       Global(product: "Novel", subname: "The complete Novel of Sherlok Holmes by Arthur Conan Doyle", text1: "Rent\u{20B9}${38}", text2: "per week", text3: "Buy Now", text4: "\u{20B9}${600}", img: "assets/images/Lok.webp" ),
                     ],
