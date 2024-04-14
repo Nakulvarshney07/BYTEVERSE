@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:huma/global.dart';
@@ -12,6 +14,30 @@ class Home_screen extends StatefulWidget {
 
 class _Home_screenState extends State<Home_screen> {
   var searchtext=TextEditingController();
+  var _fullname;
+  Future<void> _fetchUserData() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      final docRef = FirebaseFirestore.instance.collection('users').doc(user.uid);
+      final docSnapshot = await docRef.get();
+      if (docSnapshot.exists) {
+        final userData = docSnapshot.data();
+        setState(() {
+          _fullname = userData?['fullName'] as String;
+        });
+      }
+      else{
+        setState(() {
+          _fullname = "Null";
+        });
+      }
+    }
+  }
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +69,7 @@ class _Home_screenState extends State<Home_screen> {
                     children: [
                       Text("Welcome",style: TextStyle(color: Colors.white,fontSize: 18),),
                       SizedBox(height: 2,),
-                      Text("Nakul",style: TextStyle(color: Colors.white,fontSize: 15),),
+                      Text(_fullname,style: TextStyle(color: Colors.white,fontSize: 15),),
                     ],
                   ),
                 ),

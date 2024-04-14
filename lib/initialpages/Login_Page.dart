@@ -168,6 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                                           height: 80,
                                           child: TextFormField(
                                             controller: passcontroller,
+                                            obscureText: true,
                                             decoration: InputDecoration(
                                                 hintText: 'Enter your Passowrd',
                                                 enabledBorder: OutlineInputBorder(
