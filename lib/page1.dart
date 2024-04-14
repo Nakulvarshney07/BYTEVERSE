@@ -54,7 +54,7 @@ class _Page1_screenState extends State<Page1_screen> {
               },), 
                 SizedBox(width: 20,),
                 InkWell(
-             child:  Global2(img: "assets/images/Exchange.jpg", text1: "Study Equips", text2: "Buy or Rent\n products"),
+             child:  Global2(img: "assets/images/Exchange.jpg", text1: "Study Equips", text2: " Rent or Buy\n study products"),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>sell()));
               },),
@@ -73,7 +73,7 @@ class _Page1_screenState extends State<Page1_screen> {
               },),
                  SizedBox(width: 20,),
                  InkWell(
-                child:  Global2(img: "assets/images/fan.png", text1: "Electronic\n Devices", text2:" Buy or sell\n electronic \n products"),
+                child:  Global2(img: "assets/images/fan.png", text1: "Electronic\nDevices", text2:" Rent or Buy\n electronic \n products"),
                  onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Devices(),));
               },)
