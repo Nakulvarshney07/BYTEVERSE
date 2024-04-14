@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:huma/initialpages/Login_Page.dart';
+import 'package:huma/initialpages/SplashScreen.dart';
 import 'package:huma/navigation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
      title: "Byteverse",
      initialRoute: '/',
      routes: {
-      '/':(context) => LoginPage(),
+      '/':(context) => SplashScreen(),
      },
 
     );
