@@ -20,12 +20,12 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     final user=auth.currentUser;
     if(user != null){
-      Timer(Duration(seconds: 3),
+      Timer(Duration(microseconds: 1),
           (){
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => app()));
           });
     }else{
-      Timer(Duration(seconds: 3),
+      Timer(Duration(microseconds: 1),
               (){
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
           });
@@ -38,12 +38,12 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: 250,
           height: 250,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/anshulassets/rental.png'),
-              fit: BoxFit.cover
-            )
-          ),
+          // decoration: BoxDecoration(
+          //   // image: DecorationImage(
+          //   //     image: AssetImage('assets/anshulassets/rental.png'),
+          //   //   fit: BoxFit.cover
+          //   // )
+          // ),
         ),
       ),
     );
