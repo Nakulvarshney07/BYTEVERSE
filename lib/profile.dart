@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:huma/About.dart';
 import 'package:huma/help.dart';
+import 'package:huma/initialpages/Login_Page.dart';
 
 class Profile_screen extends StatefulWidget {
   const Profile_screen({super.key});
@@ -11,6 +12,24 @@ class Profile_screen extends StatefulWidget {
 }
 
 class _Profile_screenState extends State<Profile_screen> {
+  void Dialog(){
+    showDialog(context: context, builder: (BuildContext context){
+      return AlertDialog(
+        title: Text('Log Out'),
+        content: Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(onPressed: (){
+            Navigator.pop(context);
+          },
+              child: Text("Cancel")),
+          TextButton(onPressed: (){
+           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+          },
+              child: Text('Ok'))
+        ],
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,9 +145,11 @@ class _Profile_screenState extends State<Profile_screen> {
                     Container(
                        color: Colors.grey.shade900,
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          Dialog();
+                        },
                         child: ListTile(
-                          
+
                           leading: Icon(Icons.logout,color: Colors.red,),
                           title: Text("Logout",style: TextStyle(color: Colors.white),),
                           trailing: Icon(Icons.chevron_right_outlined,color: Colors.white,)
