@@ -14,7 +14,7 @@ class Home_screen extends StatefulWidget {
 
 class _Home_screenState extends State<Home_screen> {
   var searchtext=TextEditingController();
-  var _fullname;
+  var _fullname="";
   Future<void> _fetchUserData() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
@@ -26,11 +26,7 @@ class _Home_screenState extends State<Home_screen> {
           _fullname = userData?['fullName'] as String;
         });
       }
-      else{
-        setState(() {
-          _fullname = "Null";
-        });
-      }
+
     }
   }
   @override

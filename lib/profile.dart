@@ -15,21 +15,23 @@ class Profile_screen extends StatefulWidget {
 
 class _Profile_screenState extends State<Profile_screen> {
 
-  var _fullname;
+  var _fullname="";
   Future<void> _fetchUserData() async {
+
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       final docRef = FirebaseFirestore.instance.collection('users').doc(user.uid);
       final docSnapshot = await docRef.get();
       if (docSnapshot.exists) {
         final userData = docSnapshot.data();
+
         setState(() {
-          _fullname = userData?['fullName'] as String;
+          _fullname = userData?['fullName'] ?? "";
         });
       }
       else{
         setState(() {
-          _fullname = "Null";
+          _fullname = "";
         });
       }
     }
