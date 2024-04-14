@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:huma/initialpages/ForgetPassword.dart';
 import 'package:huma/initialpages/Signup_page.dart';
 import 'package:huma/initialpages/home.dart';
-
-import '../navigation.dart';
+import 'package:huma/navigation.dart';
 
 class LoginPage extends StatefulWidget{
   @override

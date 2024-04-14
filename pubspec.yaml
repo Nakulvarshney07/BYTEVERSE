@@ -39,12 +39,9 @@ dependencies:
 <<<<<<< HEAD
   firebase_auth: ^4.19.1
   cloud_firestore: ^4.16.1  
-=======
-  firebase_core: ^2.29.0
-  firebase_auth: ^4.19.1
-  cloud_firestore: ^4.16.1
->>>>>>> 1a07b318ae4b2228751476f1974e25a456cafb2d
 
+  firebase_core: ^2.29.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

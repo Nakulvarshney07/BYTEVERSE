@@ -162,9 +162,7 @@ packages:
     source: hosted
     version: "5.11.1"
   firebase_core:
-<<<<<<< HEAD
-    dependency: transitive
-=======
+
     dependency: "direct main"
 >>>>>>> 1a07b318ae4b2228751476f1974e25a456cafb2d
     description:
@@ -424,11 +422,9 @@ packages:
       sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
+
     version: "14.0.0"
-=======
-    version: "13.0.0"
->>>>>>> 1a07b318ae4b2228751476f1974e25a456cafb2d
+
   web:
     dependency: transitive
     description:
@@ -455,8 +451,6 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.3.2 <4.0.0"
-<<<<<<< HEAD
-  flutter: ">=3.18.0-18.0.pre.54"
-=======
+
   flutter: ">=3.3.0"
->>>>>>> 1a07b318ae4b2228751476f1974e25a456cafb2d
+
