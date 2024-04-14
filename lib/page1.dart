@@ -54,7 +54,7 @@ class _Page1_screenState extends State<Page1_screen> {
               },), 
                 SizedBox(width: 20,),
                 InkWell(
-             child:  Global2(img: "assets/images/Exchange.jpg", text1: "sell", text2: "Buy or Rent\n prodcuts"),
+             child:  Global2(img: "assets/images/Exchange.jpg", text1: "Study Equips", text2: "Buy or Rent\n products"),
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>sell()));
               },),
@@ -67,7 +67,7 @@ class _Page1_screenState extends State<Page1_screen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 InkWell(
-                child:Global2(img: "assets/images/cycle.png", text1: "Transportation", text2: "Make memorable\n      moment"),
+                child:Global2(img: "assets/images/cycle.png", text1: "Transportation", text2: "Get transport facility at low rate."),
                  onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Transportation()));
               },),
