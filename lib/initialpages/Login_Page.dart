@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:huma/initialpages/ForgetPassword.dart';
 import 'package:huma/initialpages/Signup_page.dart';
 import 'package:huma/initialpages/home.dart';
-
-import '../navigation.dart';
+import 'package:huma/navigation.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -173,6 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                                             controller: passcontroller,
                                             decoration: InputDecoration(
                                                 hintText: 'Enter your Passowrd',
+                                                
                                                 enabledBorder: OutlineInputBorder(
                                                     borderRadius: BorderRadius.circular(18),
                                                     borderSide: BorderSide(
