@@ -26,11 +26,7 @@ class _Home_screenState extends State<Home_screen> {
           _fullname = userData?['fullName'] as String;
         });
       }
-      else{
-        setState(() {
-          _fullname = "Null";
-        });
-      }
+      
     }
   }
   @override
