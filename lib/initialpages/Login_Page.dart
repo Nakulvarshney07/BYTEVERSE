@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                                           child: TextFormField(
                                             obscureText: true,
                                             controller: passcontroller,
-                                            obscureText: true,
+
                                             decoration: InputDecoration(
                                                 hintText: 'Enter your Passowrd',
                                                 

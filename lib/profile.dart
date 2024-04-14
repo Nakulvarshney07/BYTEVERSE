@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:huma/About.dart';
@@ -12,6 +14,31 @@ class Profile_screen extends StatefulWidget {
 }
 
 class _Profile_screenState extends State<Profile_screen> {
+
+  var _fullname;
+  Future<void> _fetchUserData() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      final docRef = FirebaseFirestore.instance.collection('users').doc(user.uid);
+      final docSnapshot = await docRef.get();
+      if (docSnapshot.exists) {
+        final userData = docSnapshot.data();
+        setState(() {
+          _fullname = userData?['fullName'] as String;
+        });
+      }
+      else{
+        setState(() {
+          _fullname = "Null";
+        });
+      }
+    }
+  }
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
   void Dialog(){
     showDialog(context: context, builder: (BuildContext context){
       return AlertDialog(
@@ -60,7 +87,7 @@ class _Profile_screenState extends State<Profile_screen> {
                 ),
               ),
               SizedBox(height: 8,),
-               Text("Nakul",style: TextStyle(fontSize: 20,color: Colors.white),),
+               Text(_fullname,style: TextStyle(fontSize: 20,color: Colors.white),),
               SizedBox(height: 20,),
              
               Container(
