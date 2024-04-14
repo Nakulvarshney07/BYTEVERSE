@@ -17,12 +17,7 @@ class _Home_screenState extends State<Home_screen> {
     return Scaffold(
      appBar: AppBar(
         backgroundColor: Colors.black,
-        
-        
-        title:Column(
-          children: [
-            SizedBox(height: 16,),
-            Row(
+            title:Row(
               children: [
                   CircleAvatar(
                     backgroundColor: Colors.grey,
@@ -50,8 +45,8 @@ class _Home_screenState extends State<Home_screen> {
                 Expanded(child: SizedBox(),flex: 1,),
                  Icon(Icons.shopping_cart,color: Colors.white,) 
               ],
-            ),
-          ],
+            
+          
         ),
       ),
       body: Container(

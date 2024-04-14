@@ -171,6 +171,7 @@ class _LoginPageState extends State<LoginPage> {
                                             controller: passcontroller,
                                             decoration: InputDecoration(
                                                 hintText: 'Enter your Passowrd',
+                                                
                                                 enabledBorder: OutlineInputBorder(
                                                     borderRadius: BorderRadius.circular(18),
                                                     borderSide: BorderSide(
